@@ -18,6 +18,7 @@
     color: #FFFFFF;
     background: linear-gradient(to top, $primary-color, $secondary-color);
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
 
     &:hover{
         background: linear-gradient(to top, #9356DC -5.2%, #FF79DA 110.74%),
@@ -50,11 +51,7 @@ h1, h2{
     margin: 0;
 }
 
-h3{
-
-}
-
-h4{
+h3, h4{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -139,7 +136,6 @@ h4{
 
     .hero-button {
 
-
         button{
             margin: 27px 0;
             @include button
@@ -153,10 +149,6 @@ h4{
     display: flex;
     flex-direction: column;
     gap: 25px;
-
-    .fonctionnement-title{
-
-    }
 
     .fonctionnement-card{
         display: flex;
@@ -193,6 +185,87 @@ h4{
 
             .fonctionnement-text{
                 width: 100%;
+            }
+        }
+    }
+}
+
+.restaurants{
+    margin: 54px 18px 66px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .restaurants-title{
+
+    }
+
+    .restaurants-card{
+        position: relative;
+        height: 251px;
+        width: 100%;
+        cursor: pointer;
+
+        .restaurants-text-new{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 29px;
+            width: 80px;
+            background-color: $tertiary-color;
+            border-radius: 2px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #008766;
+            font-size: 14px;
+        }
+
+        .restaurants-image img{
+            display: block;
+            width: 100%;
+            height: 174px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .restaurants-content{
+            background-color: #FFFFFF;
+            height: 30.68%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+            .restaurants-text{
+                display: flex;
+                flex-direction: column;
+                padding-left: 13px;
+                gap: 5px;
+
+                .restaurants-name h3{
+                    height: 20px;
+                    margin: 0;
+                    font-size: 18px;
+                }
+
+                .restaurants-location{
+                    font-size: 17px;
+                    font-weight: 300;
+                }
+            }
+
+            .restaurants-icon{
+                font-size: 22px;
+                padding-right: 25px;
             }
         }
     }
