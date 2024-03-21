@@ -1,72 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ohmyfood</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d783e3d685.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/scss/mobile.css">
     </head>
     <body>
-        <header>
-            <div>
-<!-- logo lien -->
-            </div>
-            <div>
-<!-- input -->
-            </div>
-        </header>
-        <main>
-            <div class="hero">
-<!-- h1 + p + button -->
-            </div>
-            <div class="fonctionnement">
-                <div>
-<!-- h2 -->
+        <div class="main-container">
+            <header>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/ohmyfood@2x.svg" alt="logo du site ohmyfood">
+                    </a>
                 </div>
-                <div>
-<!-- carte *3 -->
-                    <div>
-<!-- numéro -->
+                <div class="location-input">
+                    <div class="location-icon">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    <div>
-                        <div>
-<!-- icone -->
+                    <form action="#">
+                        <input type="text" name="location" placeholder="Paris, Belleville" autocomplete="off">
+                    </form>
+                </div>
+            </header>
+            <main>
+                <section>
+                    <div class="hero">
+                        <div class="hero-text">
+                        <h1>Réservez le menu qui vous convient</h1>
+                        <p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
                         </div>
-                        <div>
-<!-- h4 -->
+                        <div class="hero-button">
+                            <button>Explorer nos restaurants</button>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="restaurants">
-                <div>
-<!-- h2 -->
-                </div>
-                <div>
-<!-- cartes liens *4 -->
-                    <div>
-<!-- img -->
-                    </div>
-                    <div>
-                        <div>
-                            <div>
-<!-- h3 -->
+                </section>
+                <section>
+                    <div class="fonctionnement">
+                        <div class="fonctionnement-title">
+                            <h2>Fonctionnement</h2>
+                        </div>
+                        <div class="fonctionnement-card">
+                            <div class="fonctionnement-number">
+                                <h4>1</h4>
                             </div>
-                            <div>
-<!-- p -->
+                            <div class="fonctionnement-content">
+                                <div class="fonctionnement-icon">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+                                <div class="fonctionnement-text">
+                                    <h4>Choisissez un restaurant</h4>
+                                </div>
                             </div>
                         </div>
-                        <div>
-<!-- icone ceur -->
+                        <div class="fonctionnement-card">
+                            <div class="fonctionnement-number">
+                                <h4>2</h4>
+                            </div>
+                            <div class="fonctionnement-content">
+                                <div class="fonctionnement-icon">
+                                    <i class="fa-solid fa-list-ul"></i>
+                                </div>
+                                <div class="fonctionnement-text">
+                                    <h4>Composez votre menu</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fonctionnement-card">
+                            <div class="fonctionnement-number">
+                                <h4>3</h4>
+                            </div>
+                            <div class="fonctionnement-content">
+                                <div class="fonctionnement-icon">
+                                    <i class="fa-solid fa-store"></i>
+                                </div>
+                                <div class="fonctionnement-text">
+                                    <h4>Dégustez au restaurant</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </section>
+                <section>
+                    <div class="restaurants">
+                        <div>
+        <!-- h2 -->
+                            <h2>Restaurants</h2>
+                        </div>
+                        <div>
+        <!-- cartes liens *4 -->
+                            <div>
+        <!-- img -->
+                                <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo d'un plat de restaurant">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>
+        <!-- h3 -->
+                                        <h3>La palette du goût</h3>
+                                    </div>
+                                    <div>
+        <!-- p -->
+                                        <p>Ménilmontant</p>
+                                    </div>
+                                </div>
+                                <div>
+        <!-- icone ceur -->
+                                    <i class="fa-regular fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div>
+    <!-- logo -->
+                    <a href="#">
+                        <img src="assets/images/logo/ohmyfood@2x.svg" alt="logo du site ohmyfood">
+                    </a>
                 </div>
-            </div>
-        </main>
-        <footer>
-            <div>
-<!-- logo -->
-            </div>
-            <div>
-<!-- liens *4 -->
-            </div>
-        </footer>
-    </body>
+                <div>
+    <!-- liens *4 -->
+                    <a href="#">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h4>Proposer un restaurant</h4>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <h4>Devenir partenaire</h4>
+                    </a>
+                    <a href="#">
+                        <h4>Mentions légales</h4>
+                    </a>
+                    <a href="#">
+                        <h4>Contact</h4>
+                    </a>
+                </div>
+            </footer>
+        </body>
+    </div>
 </html>
