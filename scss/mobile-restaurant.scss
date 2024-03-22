@@ -1,0 +1,303 @@
+// Variables :
+    $primary-color: #9356DC;
+    $secondary-color: #FF79DA;
+    $tertiary-color: #99E2D0;
+
+// @mixin text roboto sur 18px
+// @mixin ombre 15 4 10%
+// @mixin bouton dégrade primaire secondaire avec le shadow 25% texte blanc et radius
+@mixin button{
+    height: 50px;
+    width: 218px;
+    border-radius: 25px;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background: linear-gradient(to top, $primary-color, $secondary-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+
+    // Manque des trucs sur ce hover
+    &:hover{
+        background: linear-gradient(to top, #9356DC -5.2%, #FF79DA 110.74%),
+linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.35));
+    }
+}
+// @mixin carte menu radius disposition text + prix + shadow
+
+body{
+    margin: 0px;
+}
+
+.main-container{
+    width: 100%;
+    max-width: 375px;
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, p{
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo{
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.location-input{
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    background-color: #EAEAEA;
+
+    form input{
+        border: none;
+        background-color: #EAEAEA;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0;
+
+        &:hover{
+            cursor: text;
+        }
+
+        &::placeholder{
+            color: black;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        &:focus{
+            outline: none;
+
+            &::placeholder{
+                opacity: 0;
+            }
+        }
+    }
+
+    .location-icon{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+    }
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 39px 0 30px 0;
+
+    .hero-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+
+        h1{
+            width: 73.33%;
+        }
+
+        p{
+            width: 84%;
+        }
+    }
+
+    .hero-button {
+
+        button{
+            margin: 27px 0;
+            @include button
+        }
+    }
+}
+
+.fonctionnement{
+    background-color: #FFFFFF;
+    padding: 48px 20px 68px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .fonctionnement-card{
+        display: flex;
+        align-items: center;
+
+        .fonctionnement-number{
+            position: absolute;
+            border-radius: 50%;
+            background-color: $primary-color;
+            color: #FFFFFF;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.89rem;
+        }
+
+        .fonctionnement-content{
+            width: 100%;
+            height: 72.38px;
+            display: flex;
+            align-items: center;
+            background-color: #F6F6F6;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            margin: 0 0 0 12px;
+            border-radius: 20px;
+
+            .fonctionnement-icon{
+                padding: 0 27px 0 33.47px;
+                color: #7E7E7E;
+                font-size: 19.9px;
+
+                &:hover{
+                    // Faire en sorte que le hover fonctionne pas seulement sur l'icone mais sur toute le content
+                    color: $primary-color;
+                }
+            }
+
+            .fonctionnement-text{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.restaurants{
+    margin: 54px 18px 66px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .restaurants-title{
+
+    }
+
+    .restaurants-card{
+        position: relative;
+        height: 251px;
+        width: 100%;
+        cursor: pointer;
+
+        .restaurants-text-new{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 29px;
+            width: 80px;
+            background-color: $tertiary-color;
+            border-radius: 2px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #008766;
+            font-size: 0.875rem;
+        }
+
+        .restaurants-image img{
+            display: block;
+            width: 100%;
+            height: 174px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .restaurants-content{
+            background-color: #FFFFFF;
+            height: 30.68%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+            .restaurants-text{
+                display: flex;
+                flex-direction: column;
+                padding-left: 13px;
+                gap: 5px;
+
+                .restaurants-name h3{
+                    height: 20px;
+                    font-size: 1.125rem;
+                }
+
+                .restaurants-location p{
+                    font-size: 1.0625rem;
+                    font-weight: 300;
+                }
+            }
+
+            .restaurants-icon{
+                font-size: 22px;
+                padding-right: 25px;
+            }
+        }
+    }
+}
+
+.footer-section{
+    background-color: #353535;
+    color: #FFFFFF;
+    padding: 22px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .footer-logo h2{
+        font-family: "Shrikhand", serif;
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    .footer-link{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .footer-link a{
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        .footer-icon{
+
+        }
+
+        .footer-text h4{
+            font-weight: 500;
+        }
+
+        .footer-text p{
+
+        }
+    }
+}

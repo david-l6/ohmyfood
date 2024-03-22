@@ -9,20 +9,17 @@ body {
   background-color: #F6F6F6;
 }
 
-p {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.125rem;
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, p {
   margin: 0;
 }
 
-h1, h2 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-h3, h4 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo {
@@ -47,26 +44,21 @@ h3, h4 {
 .location-input form input {
   border: none;
   background-color: #EAEAEA;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   padding: 0;
-  height: 19px;
-  text-align: center;
 }
 .location-input form input:hover {
   cursor: text;
 }
 .location-input form input::-moz-placeholder {
   color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
 }
 .location-input form input::placeholder {
   color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -112,12 +104,11 @@ h3, h4 {
   border-radius: 25px;
   border: none;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   color: #FFFFFF;
   background: linear-gradient(to top, #9356DC, #FF79DA);
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 .hero .hero-button button:hover {
@@ -146,11 +137,11 @@ h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14.18px;
-  font-weight: 500;
+  font-size: 0.89rem;
 }
 .fonctionnement .fonctionnement-card .fonctionnement-content {
   width: 100%;
+  height: 72.38px;
   display: flex;
   align-items: center;
   background-color: #F6F6F6;
@@ -163,6 +154,9 @@ h3, h4 {
   color: #7E7E7E;
   font-size: 19.9px;
 }
+.fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-icon:hover {
+  color: #9356DC;
+}
 .fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-text {
   width: 100%;
 }
@@ -172,10 +166,6 @@ h3, h4 {
   display: flex;
   flex-direction: column;
   gap: 18px;
-}
-.restaurants a {
-  color: inherit;
-  text-decoration: none;
 }
 .restaurants .restaurants-card {
   position: relative;
@@ -196,7 +186,7 @@ h3, h4 {
   align-items: center;
   justify-content: center;
   color: #008766;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .restaurants .restaurants-card .restaurants-image img {
   display: block;
@@ -224,14 +214,40 @@ h3, h4 {
 }
 .restaurants .restaurants-card .restaurants-content .restaurants-text .restaurants-name h3 {
   height: 20px;
-  margin: 0;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
-.restaurants .restaurants-card .restaurants-content .restaurants-text .restaurants-location {
-  font-size: 17px;
+.restaurants .restaurants-card .restaurants-content .restaurants-text .restaurants-location p {
+  font-size: 1.0625rem;
   font-weight: 300;
 }
 .restaurants .restaurants-card .restaurants-content .restaurants-icon {
   font-size: 22px;
   padding-right: 25px;
-}/*# sourceMappingURL=mobile.css.map */
+}
+
+.footer-section {
+  background-color: #353535;
+  color: #FFFFFF;
+  padding: 22px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer-section .footer-logo h2 {
+  font-family: "Shrikhand", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.footer-section .footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.footer-section .footer-link a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.footer-section .footer-link a .footer-text h4 {
+  font-weight: 500;
+}/*# sourceMappingURL=mobile-restaurant.css.map */
