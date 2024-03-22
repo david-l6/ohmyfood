@@ -3,9 +3,6 @@
     $secondary-color: #FF79DA;
     $tertiary-color: #99E2D0;
 
-// @mixin text roboto sur 18px
-// @mixin ombre 15 4 10%
-// @mixin bouton dégrade primaire secondaire avec le shadow 25% texte blanc et radius
 @mixin button{
     height: 50px;
     width: 218px;
@@ -19,32 +16,24 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
-    // Manque des trucs sur ce hover
     &:hover{
-        background: linear-gradient(to top, #9356DC -5.2%, #FF79DA 110.74%),
-linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.35));
+        filter: brightness(115%);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     }
 }
-// @mixin carte menu radius disposition text + prix + shadow
 
-body{
+body, h1, h2, h3, h4, p{
     margin: 0px;
 }
 
 .main-container{
     width: 100%;
-    max-width: 375px;
     box-sizing: border-box;
     background-color: #F6F6F6;
 }
 
 * {
     font-family: "Roboto", sans-serif;
-}
-
-h1, h2, h3, h4, p{
-    margin: 0;
 }
 
 a{
@@ -77,6 +66,7 @@ a{
         font-size: 1rem;
         font-weight: 500;
         padding: 0;
+        width: 109px;
 
         &:hover{
             cursor: text;
@@ -86,7 +76,6 @@ a{
             color: black;
             font-size: 1rem;
             font-weight: 500;
-            text-align: center;
         }
 
         &:focus{
@@ -147,6 +136,10 @@ a{
         display: flex;
         align-items: center;
 
+        &:hover .fa-solid{
+            color: $primary-color;
+        }
+
         .fonctionnement-number{
             position: absolute;
             border-radius: 50%;
@@ -174,11 +167,6 @@ a{
                 padding: 0 27px 0 33.47px;
                 color: #7E7E7E;
                 font-size: 19.9px;
-
-                &:hover{
-                    // Faire en sorte que le hover fonctionne pas seulement sur l'icone mais sur toute le content
-                    color: $primary-color;
-                }
             }
 
             .fonctionnement-text{
@@ -193,10 +181,6 @@ a{
     display: flex;
     flex-direction: column;
     gap: 18px;
-
-    .restaurants-title{
-
-    }
 
     .restaurants-card{
         position: relative;
@@ -288,16 +272,8 @@ a{
         align-items: center;
         gap: 11px;
 
-        .footer-icon{
-
-        }
-
         .footer-text h4{
             font-weight: 500;
-        }
-
-        .footer-text p{
-
         }
     }
 }

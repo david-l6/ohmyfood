@@ -3,9 +3,6 @@
     $secondary-color: #FF79DA;
     $tertiary-color: #99E2D0;
 
-// @mixin text roboto sur 18px
-// @mixin ombre 15 4 10%
-// @mixin bouton dégrade primaire secondaire avec le shadow 25% texte blanc et radius
 @mixin button{
     height: 50px;
     width: 218px;
@@ -19,32 +16,26 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
-    // Manque des trucs sur ce hover
     &:hover{
-        background: linear-gradient(to top, #9356DC -5.2%, #FF79DA 110.74%),
-linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.35));
+        filter: brightness(115%);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     }
 }
+
 // @mixin carte menu radius disposition text + prix + shadow
 
-body{
+body, h1, h2, h3, h4, p{
     margin: 0px;
 }
 
 .main-container{
     width: 100%;
-    max-width: 375px;
     box-sizing: border-box;
     background-color: #F6F6F6;
 }
 
 * {
     font-family: "Roboto", sans-serif;
-}
-
-h1, h2, h3, h4, p{
-    margin: 0;
 }
 
 a{
@@ -54,211 +45,129 @@ a{
 
 .logo{
     height: 63px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #FFFFFF;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-    position: relative;
-}
-
-.location-input{
-    height: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 17px;
-    background-color: #EAEAEA;
+    justify-content: center;
 
-    form input{
-        border: none;
-        background-color: #EAEAEA;
-        font-size: 1rem;
-        font-weight: 500;
-        padding: 0;
+    .logo-icon{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 63px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover{
-            cursor: text;
-        }
-
-        &::placeholder{
-            color: black;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        &:focus{
-            outline: none;
-
-            &::placeholder{
-                opacity: 0;
-            }
-        }
-    }
-
-    .location-icon{
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-    }
-}
-
-.hero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 39px 0 30px 0;
-
-    .hero-text{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-
-        h1{
-            width: 73.33%;
-        }
-
-        p{
-            width: 84%;
-        }
-    }
-
-    .hero-button {
-
-        button{
-            margin: 27px 0;
-            @include button
+            cursor: pointer;
         }
     }
 }
 
-.fonctionnement{
-    background-color: #FFFFFF;
-    padding: 48px 20px 68px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.restaurant{
 
-    .fonctionnement-card{
-        display: flex;
-        align-items: center;
-
-        .fonctionnement-number{
-            position: absolute;
-            border-radius: 50%;
-            background-color: $primary-color;
-            color: #FFFFFF;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.89rem;
-        }
-
-        .fonctionnement-content{
-            width: 100%;
-            height: 72.38px;
-            display: flex;
-            align-items: center;
-            background-color: #F6F6F6;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-            margin: 0 0 0 12px;
-            border-radius: 20px;
-
-            .fonctionnement-icon{
-                padding: 0 27px 0 33.47px;
-                color: #7E7E7E;
-                font-size: 19.9px;
-
-                &:hover{
-                    // Faire en sorte que le hover fonctionne pas seulement sur l'icone mais sur toute le content
-                    color: $primary-color;
-                }
-            }
-
-            .fonctionnement-text{
-                width: 100%;
-            }
-        }
-    }
-}
-
-.restaurants{
-    margin: 54px 18px 66px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-
-    .restaurants-title{
-
-    }
-
-    .restaurants-card{
-        position: relative;
-        height: 251px;
+    .restaurant-image img{
+        display: block;
         width: 100%;
-        cursor: pointer;
+        height: 275px;
+        object-fit: cover;
+    }
 
-        .restaurants-text-new{
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            height: 29px;
-            width: 80px;
-            background-color: $tertiary-color;
-            border-radius: 2px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #008766;
-            font-size: 0.875rem;
-        }
-
-        .restaurants-image img{
-            display: block;
-            width: 100%;
-            height: 174px;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-
-        .restaurants-content{
-            background-color: #FFFFFF;
-            height: 30.68%;
+    .restaurant-content{
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        background-color: #f6f6f6;
+        transform: translateY(-40px);
+        
+        .restaurant-name{
+            padding: 32px 17px 0px 17px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
 
-            .restaurants-text{
+            .restaurant-name-title h2{
+                font-family: "Shrikhand", serif;
+                font-size: 28px;
+                font-weight: 400;
+            }
+
+            .restaurant-name-icon{
+                font-size: 22px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .restaurant-menu{
+            margin: 40px 13px 0 13px;
+
+            .menu h3{
+                font-size: 1rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                padding-bottom: 8px;
+                margin: 0 0 12px 0;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 3px;
+                    background-color: $tertiary-color;
+                }
+            }
+
+            .menu-content{
                 display: flex;
                 flex-direction: column;
-                padding-left: 13px;
-                gap: 5px;
+                gap: 12px;
 
-                .restaurants-name h3{
-                    height: 20px;
-                    font-size: 1.125rem;
-                }
+                .menu-card{
+                    background-color: #FFFFFF;
+                    border-radius: 15px;
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                    padding: 12px 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
 
-                .restaurants-location p{
-                    font-size: 1.0625rem;
-                    font-weight: 300;
+                    .menu-name{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                    }
+
+                    .menu-name h4{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    .menu-name p{
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+
+                    .menu-price{
+                        font-size: 15px;
+                        font-weight: 700;
+                    }
                 }
             }
+        }
 
-            .restaurants-icon{
-                font-size: 22px;
-                padding-right: 25px;
-            }
+        .restaurant-button{
+            display: flex;
+            justify-content: center;
+        }
+
+        .restaurant-button button{
+            margin: 40px 0 0 0;
+            @include button
         }
     }
 }

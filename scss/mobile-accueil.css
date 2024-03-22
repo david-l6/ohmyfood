@@ -1,20 +1,15 @@
-body {
+body, h1, h2, h3, h4, p {
   margin: 0px;
 }
 
 .main-container {
   width: 100%;
-  max-width: 375px;
   box-sizing: border-box;
   background-color: #F6F6F6;
 }
 
 * {
   font-family: "Roboto", sans-serif;
-}
-
-h1, h2, h3, h4, p {
-  margin: 0;
 }
 
 a {
@@ -47,6 +42,7 @@ a {
   font-size: 1rem;
   font-weight: 500;
   padding: 0;
+  width: 109px;
 }
 .location-input form input:hover {
   cursor: text;
@@ -55,13 +51,11 @@ a {
   color: black;
   font-size: 1rem;
   font-weight: 500;
-  text-align: center;
 }
 .location-input form input::placeholder {
   color: black;
   font-size: 1rem;
   font-weight: 500;
-  text-align: center;
 }
 .location-input form input:focus {
   outline: none;
@@ -112,8 +106,8 @@ a {
   cursor: pointer;
 }
 .hero .hero-button button:hover {
-  background: linear-gradient(to top, #9356DC -5.2%, #FF79DA 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.35));
+  filter: brightness(115%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .fonctionnement {
@@ -126,6 +120,9 @@ a {
 .fonctionnement .fonctionnement-card {
   display: flex;
   align-items: center;
+}
+.fonctionnement .fonctionnement-card:hover .fa-solid {
+  color: #9356DC;
 }
 .fonctionnement .fonctionnement-card .fonctionnement-number {
   position: absolute;
@@ -153,9 +150,6 @@ a {
   padding: 0 27px 0 33.47px;
   color: #7E7E7E;
   font-size: 19.9px;
-}
-.fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-icon:hover {
-  color: #9356DC;
 }
 .fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-text {
   width: 100%;
