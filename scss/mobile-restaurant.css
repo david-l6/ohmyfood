@@ -69,10 +69,32 @@ a {
   font-weight: 400;
 }
 .restaurant__content .restaurant__name .restaurant__name-icon {
-  font-size: 22px;
-  width: 50px;
   display: flex;
   align-items: center;
+  position: relative;
+  font-size: 22px;
+  width: 50px;
+}
+.restaurant__content .restaurant__name .restaurant__name-icon .fa-regular {
+  transition-duration: 0.4s;
+  opacity: 1;
+}
+.restaurant__content .restaurant__name .restaurant__name-icon .fa-solid {
+  position: absolute;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  transition-duration: 0.4s;
+  transform: scale(0);
+  opacity: 0;
+}
+.restaurant__content .restaurant__name .restaurant__name-icon:hover .fa-solid {
+  transform: scale(1);
+  opacity: 1;
+}
+.restaurant__content .restaurant__name .restaurant__name-icon:hover .fa-regular {
+  opacity: 0;
 }
 .restaurant__content .restaurant__menu {
   margin: 40px 13px 0 13px;

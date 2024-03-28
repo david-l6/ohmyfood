@@ -40,6 +40,37 @@ $secondary-font-color: #FFFFFF;
     }
 }
 
+@mixin heart{
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 22px;
+
+    .fa-regular{
+        transition-duration: 0.4s;
+        opacity: 1;
+    }
+
+    .fa-solid{
+        position: absolute;
+        background-image: $heart-gradient;
+        background-clip: text;
+        color: transparent;
+        transition-duration: 0.4s;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    &:hover .fa-solid{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    &:hover .fa-regular{
+        opacity: 0;
+    }
+}
+
 @mixin plat{
     background-color: $primary-background;
     border-radius: 15px;
@@ -149,10 +180,8 @@ a{
             }
 
             .restaurant__name-icon{
-                font-size: 22px;
+                @include heart;
                 width: 50px;
-                display: flex;
-                align-items: center;
             }
         }
 
