@@ -1,7 +1,25 @@
 // Variables :
-    $primary-color: #9356DC;
-    $secondary-color: #FF79DA;
-    $tertiary-color: #99E2D0;
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$button-gradient: linear-gradient(to top, $primary-color, $secondary-color);
+$heart-gradient: linear-gradient(to right, $primary-color, $secondary-color);
+$primary-background:#FFFFFF;
+$secondary-background: #F6F6F6;
+$tertiary-background: #EAEAEA;
+$footer-background:#353535;
+$shadow-color: #000000;
+$primary-font-color: #000000;
+$secondary-font-color: #FFFFFF;
+
+// Mixin :
+@mixin primary-font{
+    font-family: "Shrikhand", serif;
+}
+
+@mixin secondary-font{
+    font-family: "Roboto", sans-serif;
+}
 
 @mixin button{
     height: 50px;
@@ -11,31 +29,60 @@
     padding: 0;
     font-weight: 500;
     font-size: 1rem;
-    color: #FFFFFF;
-    background: linear-gradient(to top, $primary-color, $secondary-color);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    color: $secondary-font-color;
+    background: $button-gradient;
+    box-shadow: 0px 4px 10px rgba($shadow-color, 0.25);
     cursor: pointer;
 
     &:hover{
         filter: brightness(115%);
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+        box-shadow: 0px 4px 15px rgba($shadow-color, 0.35);
     }
 }
 
-// @mixin carte menu radius disposition text + prix + shadow
+@mixin plat{
+    background-color: $primary-background;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba($shadow-color, 0.1);
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .menu__name{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .menu__name h4{
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    .menu__name p{
+        font-size: 0.940rem;
+        font-weight: 300;
+    }
+
+    .menu__price p{
+        font-size: 0.940rem;
+        font-weight: 700;
+    }
+}
 
 body, h1, h2, h3, h4, p{
     margin: 0px;
 }
 
-.main-container{
+.main__container{
     width: 100%;
     box-sizing: border-box;
-    background-color: #F6F6F6;
+    background-color: $secondary-background;
 }
 
 * {
-    font-family: "Roboto", sans-serif;
+    @include secondary-font;
 }
 
 a{
@@ -45,7 +92,7 @@ a{
 
 .logo{
     height: 63px;
-    background-color: #FFFFFF;
+    background-color: $primary-background;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,46 +100,55 @@ a{
     a{
         position: absolute;
         left: 0;
-        height: 100%;
         width: 63px;
-        font-size: 30px;
+        height: 63px;
         display: flex;
         justify-content: center;
         align-items: center;
 
+        .fa-solid{
+            font-size: 19.7px;
+        }
+
         &:hover{
             cursor: pointer;
-        }
+        }   
+    }
+
+    &__title h1{
+        @include primary-font;
+        font-size: 1.875rem;
+        font-weight: 400;
     }
 }
 
 .restaurant{
 
-    .restaurant-image img{
+    &__image img{
         display: block;
         width: 100%;
         height: 275px;
         object-fit: cover;
     }
 
-    .restaurant-content{
+    &__content{
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
-        background-color: #f6f6f6;
+        background-color: $secondary-background;
         transform: translateY(-40px);
         
-        .restaurant-name{
+        .restaurant__name{
             padding: 32px 17px 0px 17px;
             display: flex;
             justify-content: space-between;
 
-            .restaurant-name-title h2{
-                font-family: "Shrikhand", serif;
-                font-size: 28px;
+            .restaurant__name-title h2{
+                @include primary-font;
+                font-size: 1.75rem;
                 font-weight: 400;
             }
 
-            .restaurant-name-icon{
+            .restaurant__name-icon{
                 font-size: 22px;
                 width: 50px;
                 display: flex;
@@ -100,7 +156,7 @@ a{
             }
         }
 
-        .restaurant-menu{
+        .restaurant__menu{
             margin: 40px 13px 0 13px;
 
             .menu h3{
@@ -122,52 +178,25 @@ a{
                 }
             }
 
-            .menu-content{
+            .menu__content{
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
 
-                .menu-card{
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-                    padding: 12px 15px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-
-                    .menu-name{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 5px;
-                    }
-
-                    .menu-name h4{
-                        font-size: 18px;
-                        font-weight: 500;
-                    }
-
-                    .menu-name p{
-                        font-size: 15px;
-                        font-weight: 300;
-                    }
-
-                    .menu-price{
-                        font-size: 15px;
-                        font-weight: 700;
-                    }
+                .menu__card{
+                    @include plat
                 }
             }
         }
 
-        .restaurant-button{
+        .restaurant__button{
             display: flex;
             justify-content: center;
         }
 
-        .restaurant-button button{
+        .restaurant__button button{
             margin: 40px 0 0 0;
-            @include button
+            @include button;
         }
     }
 }
@@ -175,62 +204,60 @@ a{
 @keyframes apparition {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
+}
   
-  .restaurant-menu {
+.restaurant__menu {
     opacity: 0;
     animation-name: apparition;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-  }
+}
   
-  #menu1 {
+#menu1 {
     animation-delay: 0.66s;
-  }
-  
-  #menu2 {
+}
+    
+#menu2 {
     animation-delay: 1.32s;
-  }
-  
-  #menu3 {
+}
+    
+#menu3 {
     animation-delay: 2s;
-  }
+}
 
-.footer-section{
-    background-color: #353535;
-    color: #FFFFFF;
+.footer{
+    background-color: $footer-background;
+    color: $secondary-font-color;
     padding: 22px 25px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    .footer-logo h2{
-        font-family: "Shrikhand", serif;
+    &__logo h2{
+        @include primary-font;
         font-size: 1.125rem;
         font-weight: 400;
     }
 
-    .footer-link{
+    &__link{
         display: flex;
         flex-direction: column;
         gap: 7px;
     }
 
-    .footer-link a{
+    &__link a{
         display: flex;
         align-items: center;
         gap: 11px;
-
-        .footer-icon{
-
-        }
-
-        .footer-text h4{
+        
+        .footer__text h3{
+            font-size: 1rem;
             font-weight: 500;
         }
 
-        .footer-text p{
-
+        .footer__text h4{
+            font-size: 1rem;
+            font-weight: 400;
         }
     }
 }

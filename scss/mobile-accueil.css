@@ -2,7 +2,7 @@ body, h1, h2, h3, h4, p {
   margin: 0px;
 }
 
-.main-container {
+.main__container {
   width: 100%;
   box-sizing: border-box;
   background-color: #F6F6F6;
@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 
-.logo {
+.logo__title {
   height: 63px;
   display: flex;
   justify-content: center;
@@ -26,8 +26,13 @@ a {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   position: relative;
 }
+.logo__title h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 1.875rem;
+  font-weight: 400;
+}
 
-.location-input {
+.location {
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -36,7 +41,7 @@ a {
   gap: 17px;
   background-color: #EAEAEA;
 }
-.location-input form input {
+.location form input {
   border: none;
   background-color: #EAEAEA;
   font-size: 1rem;
@@ -44,29 +49,29 @@ a {
   padding: 0;
   width: 109px;
 }
-.location-input form input:hover {
+.location form input:hover {
   cursor: text;
 }
-.location-input form input::-moz-placeholder {
-  color: black;
+.location form input::-moz-placeholder {
+  color: #000000;
   font-size: 1rem;
   font-weight: 500;
 }
-.location-input form input::placeholder {
-  color: black;
+.location form input::placeholder {
+  color: #000000;
   font-size: 1rem;
   font-weight: 500;
 }
-.location-input form input:focus {
+.location form input:focus {
   outline: none;
 }
-.location-input form input:focus::-moz-placeholder {
+.location form input:focus::-moz-placeholder {
   opacity: 0;
 }
-.location-input form input:focus::placeholder {
+.location form input:focus::placeholder {
   opacity: 0;
 }
-.location-input .location-icon {
+.location__icon {
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -78,20 +83,24 @@ a {
   align-items: center;
   padding: 39px 0 30px 0;
 }
-.hero .hero-text {
+.hero__text {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 8px;
 }
-.hero .hero-text h1 {
+.hero__text h2 {
   width: 73.33%;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
-.hero .hero-text p {
+.hero__text p {
   width: 84%;
+  font-size: 1.125rem;
+  font-weight: 300;
 }
-.hero .hero-button button {
+.hero__button button {
   margin: 27px 0;
   height: 50px;
   width: 218px;
@@ -105,7 +114,7 @@ a {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
-.hero .hero-button button:hover {
+.hero__button button:hover {
   filter: brightness(115%);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
@@ -117,14 +126,18 @@ a {
   flex-direction: column;
   gap: 25px;
 }
-.fonctionnement .fonctionnement-card {
+.fonctionnement__title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.fonctionnement__card {
   display: flex;
   align-items: center;
 }
-.fonctionnement .fonctionnement-card:hover .fa-solid {
+.fonctionnement__card:hover .fa-solid {
   color: #9356DC;
 }
-.fonctionnement .fonctionnement-card .fonctionnement-number {
+.fonctionnement__card .fonctionnement__number {
   position: absolute;
   border-radius: 50%;
   background-color: #9356DC;
@@ -135,8 +148,9 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 0.89rem;
+  font-weight: 500;
 }
-.fonctionnement .fonctionnement-card .fonctionnement-content {
+.fonctionnement__card .fonctionnement__content {
   width: 100%;
   height: 72.38px;
   display: flex;
@@ -146,13 +160,15 @@ a {
   margin: 0 0 0 12px;
   border-radius: 20px;
 }
-.fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-icon {
+.fonctionnement__card .fonctionnement__content .fonctionnement__icon {
   padding: 0 27px 0 33.47px;
   color: #7E7E7E;
   font-size: 19.9px;
 }
-.fonctionnement .fonctionnement-card .fonctionnement-content .fonctionnement-text {
+.fonctionnement__card .fonctionnement__content .fonctionnement__text h3 {
   width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .restaurants {
@@ -161,13 +177,17 @@ a {
   flex-direction: column;
   gap: 18px;
 }
-.restaurants .restaurants-card {
+.restaurants__title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.restaurants__card {
   position: relative;
   height: 251px;
   width: 100%;
   cursor: pointer;
 }
-.restaurants .restaurants-card .restaurants-text-new {
+.restaurants__card .restaurants__text-new p {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -181,8 +201,9 @@ a {
   justify-content: center;
   color: #008766;
   font-size: 0.875rem;
+  font-weight: 500;
 }
-.restaurants .restaurants-card .restaurants-image img {
+.restaurants__card .restaurants__image img {
   display: block;
   width: 100%;
   height: 174px;
@@ -191,7 +212,7 @@ a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurants .restaurants-card .restaurants-content {
+.restaurants__card .restaurants__content {
   background-color: #FFFFFF;
   height: 30.68%;
   display: flex;
@@ -200,26 +221,27 @@ a {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.restaurants .restaurants-card .restaurants-content .restaurants-text {
+.restaurants__card .restaurants__content .restaurants__text {
   display: flex;
   flex-direction: column;
   padding-left: 13px;
   gap: 5px;
 }
-.restaurants .restaurants-card .restaurants-content .restaurants-text .restaurants-name h3 {
+.restaurants__card .restaurants__content .restaurants__text .restaurants__name h3 {
   height: 20px;
   font-size: 1.125rem;
+  font-weight: 700;
 }
-.restaurants .restaurants-card .restaurants-content .restaurants-text .restaurants-location p {
+.restaurants__card .restaurants__content .restaurants__text .restaurants__location p {
   font-size: 1.0625rem;
   font-weight: 300;
 }
-.restaurants .restaurants-card .restaurants-content .restaurants-icon {
+.restaurants__card .restaurants__content .restaurants__icon {
   font-size: 22px;
   padding-right: 25px;
 }
 
-.footer-section {
+.footer {
   background-color: #353535;
   color: #FFFFFF;
   padding: 22px 25px;
@@ -227,21 +249,26 @@ a {
   flex-direction: column;
   gap: 16px;
 }
-.footer-section .footer-logo h2 {
+.footer__logo h2 {
   font-family: "Shrikhand", serif;
   font-size: 1.125rem;
   font-weight: 400;
 }
-.footer-section .footer-link {
+.footer__link {
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
-.footer-section .footer-link a {
+.footer__link a {
   display: flex;
   align-items: center;
   gap: 11px;
 }
-.footer-section .footer-link a .footer-text h4 {
+.footer__link a .footer__text h3 {
+  font-size: 1rem;
   font-weight: 500;
+}
+.footer__link a .footer__text h4 {
+  font-size: 1rem;
+  font-weight: 400;
 }/*# sourceMappingURL=mobile-accueil.css.map */
