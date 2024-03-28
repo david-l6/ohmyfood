@@ -3,7 +3,7 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $button-gradient: linear-gradient(to top, $primary-color, $secondary-color);
-$heart-gradient: linear-gradient(to right, $primary-color, $secondary-color);
+$heart-gradient: linear-gradient(to bottom, $primary-color, $secondary-color);
 $primary-background:#FFFFFF;
 $secondary-background: #F6F6F6;
 $tertiary-background: #EAEAEA;
@@ -283,8 +283,35 @@ a{
             }
 
             .restaurants__icon{
+                position: relative;
                 font-size: 22px;
-                padding-right: 25px;
+                margin-right: 25px;
+
+                &:hover .fa-solid{
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+                &:hover .fa-regular{
+                    opacity: 0;
+                }
+            }
+
+            .fa-regular{
+                transition-duration: 0.4s;
+                opacity: 1;
+            }
+
+            .fa-solid{
+                position: absolute;
+                top: 2px;
+                left: 0;
+                background-image: $heart-gradient;
+                background-clip: text;
+                color: transparent;
+                transition-duration: 0.4s;
+                transform: scale(0);
+                opacity: 0;
             }
         }
     }

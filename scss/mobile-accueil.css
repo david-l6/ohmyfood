@@ -237,8 +237,32 @@ a {
   font-weight: 300;
 }
 .restaurants__card .restaurants__content .restaurants__icon {
+  position: relative;
   font-size: 22px;
-  padding-right: 25px;
+  margin-right: 25px;
+}
+.restaurants__card .restaurants__content .restaurants__icon:hover .fa-solid {
+  transform: scale(1);
+  opacity: 1;
+}
+.restaurants__card .restaurants__content .restaurants__icon:hover .fa-regular {
+  opacity: 0;
+}
+.restaurants__card .restaurants__content .fa-regular {
+  transition-duration: 0.4s;
+  opacity: 1;
+}
+.restaurants__card .restaurants__content .fa-solid {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  transition-duration: 0.4s;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .footer {
