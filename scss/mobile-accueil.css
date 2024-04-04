@@ -2,6 +2,44 @@ body, h1, h2, h3, h4, p {
   margin: 0px;
 }
 
+.loader {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.fade-out {
+  animation: fade-out 2s ease-out both;
+}
+
+@keyframes fade-out {
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.slide-out-top {
+  animation: slide-out-top 2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes slide-out-top {
+  88% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
 .main__container {
   width: 100%;
   box-sizing: border-box;

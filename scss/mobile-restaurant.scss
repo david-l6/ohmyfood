@@ -72,33 +72,66 @@ $secondary-font-color: #FFFFFF;
 }
 
 @mixin plat{
-    background-color: $primary-background;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba($shadow-color, 0.1);
-    padding: 12px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    .menu__name{
+    .menu__card{
+        background-color: $primary-background;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba($shadow-color, 0.1);
         display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
+        justify-content: space-between;
+        height: 69px;
+        overflow: hidden;
 
-    .menu__name h4{
-        font-size: 1.125rem;
-        font-weight: 500;
-    }
+        .menu__name{
+            display: flex;
+            flex-direction: column;
+            padding: 12px 5px 12px 15px;
+            gap: 5px;
+            overflow: hidden;
+        }
 
-    .menu__name p{
-        font-size: 0.940rem;
-        font-weight: 300;
-    }
+        .menu__name h4{
+            font-size: 1.125rem;
+            font-weight: 500;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
 
-    .menu__price p{
-        font-size: 0.940rem;
-        font-weight: 700;
+        .menu__name p{
+            font-size: 0.940rem;
+            font-weight: 300;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .menu__price{
+            display: flex;
+            align-items: flex-end;
+            margin-right: -60px;
+            transition: all 0.2s ease;
+
+            p{
+                font-size: 0.940rem;
+                font-weight: 700;
+                padding: 12px 15px 12px 0px;
+            }
+
+            .menu__icon{
+                background-color: $tertiary-color;
+                padding: 24px 19.5px;
+    
+                .fa-solid{
+                    color: $secondary-font-color;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &:hover .menu__price{
+            margin: 0;
+            transition: all 0.6s ease;
+        }
     }
 }
 
@@ -173,10 +206,17 @@ a{
             display: flex;
             justify-content: space-between;
 
+            .restaurant__name-title{
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
             .restaurant__name-title h2{
                 @include primary-font;
                 font-size: 1.75rem;
                 font-weight: 400;
+                text-overflow: ellipsis;
+                overflow: hidden;
             }
 
             .restaurant__name-icon{
@@ -212,9 +252,7 @@ a{
                 flex-direction: column;
                 gap: 12px;
 
-                .menu__card{
-                    @include plat
-                }
+                @include plat
             }
         }
 
@@ -266,18 +304,21 @@ a{
         @include primary-font;
         font-size: 1.125rem;
         font-weight: 400;
+        width: fit-content;
     }
 
     &__link{
         display: flex;
         flex-direction: column;
         gap: 7px;
+        width: fit-content;
     }
 
     &__link a{
         display: flex;
         align-items: center;
         gap: 11px;
+        width: fit-content;
         
         .footer__text h3{
             font-size: 1rem;
