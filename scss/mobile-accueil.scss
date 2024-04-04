@@ -79,39 +79,65 @@ body, h1, h2, h3, h4, p{
     position: absolute;
     z-index: 1000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
     background-color: $primary-background;
+    overflow: hidden;
+    animation: fade-out 3s ease-out both;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+
+        &::before{
+            content: '';
+            position: absolute;
+            z-index: -2;
+            width: 200%;
+            height: 200%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-image: linear-gradient($primary-color, $secondary-color);
+            animation: rotate 3s linear;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            background: white;
+            border-radius: 50%;
+        }
+    }
 }
 
-.fade-out{
-    animation: fade-out 2s ease-out both;
+@keyframes rotate {
+	100% {
+		transform: rotate(4turn);
+    }
 }
 
 @keyframes fade-out{
-    95%{
-        opacity: 1;
+    85%{
+        opacity: 0.95;
     }
     100%{
         opacity: 0;
         visibility: hidden;
-    }
-}
-
-.slide-out-top{
-	animation: slide-out-top 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-
-@keyframes slide-out-top{
-    88%{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-1000px);
-        opacity: 0;
     }
 }
 
@@ -202,29 +228,16 @@ a{
         text-align: center;
         gap: 8px;
 
-        @media (min-width: 1025px){
-            gap: 18px;
-        }
-
         h2{
             width: 73.33%;
             font-size: 1.5rem;
             font-weight: 700;
-
-            @media (min-width: 1025px){
-                width: 100%;
-                font-size: 2.5rem;
-            }
         }
 
         p{
             width: 84%;
             font-size: 1.125rem;
             font-weight: 300;
-
-            @media (min-width: 1025px){
-                width: 100%;
-            }
         }
     }
 
@@ -244,10 +257,6 @@ a{
     flex-direction: column;
     gap: 25px;
 
-    @media (min-width: 1025px){
-        padding: 50px 180px 50px 180px;
-    }
-
     &__title h2{
         font-size: 1.5rem;
         font-weight: 700;
@@ -257,21 +266,12 @@ a{
         display: flex;
         flex-direction: column;
         gap: 25px;
-
-        @media (min-width: 1025px){
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 24px;
         }
     }
 
     &__card{
         display: flex;
         align-items: center;
-
-        @media (min-width: 1025px){
-            width: 100%;
-        }
 
         &:hover .fa-solid{
             color: $primary-color;
@@ -322,17 +322,6 @@ a{
     flex-direction: column;
     gap: 18px;
 
-    @media (min-width: 769px){
-        margin: 30px 18px;
-        gap: 28px;
-    }
-
-    @media (min-width: 1025px){
-        margin: 30px 0;
-        padding: 0 180px 0 180px;
-        gap: 28px;
-    }
-
     &__title h2{
         font-size: 1.5rem;
         font-weight: 700;
@@ -342,16 +331,6 @@ a{
         display: flex;
         flex-direction: column;
         gap: 18px;
-
-        @media (min-width: 769px){
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        @media (min-width: 1025px){
-            gap: 50px 100px;
-        }
     }
 
     &__card{
@@ -430,11 +409,9 @@ a{
     gap: 16px;
     height: 142px;
 
-    @media (min-width: 1025px){
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        height: 54px;
-        padding: 30px 70px;
+    &__logo a{
+        display: flex;
+        width: fit-content;
     }
 
     &__logo h2{
@@ -447,10 +424,7 @@ a{
         display: flex;
         flex-direction: column;
         gap: 7px;
-
-        @media (min-width: 1025px){
-            flex-direction: row;
-        }
+        width: fit-content;
     }
 
     &__link a{
@@ -461,17 +435,84 @@ a{
         .footer__text h3{
             font-size: 1rem;
             font-weight: 500;
-
-            @media (min-width: 1025px){
-                width: 168px;
-            }
         }
 
         .footer__text h4{
             font-size: 1rem;
             font-weight: 400;
+        }
+    }
+}
 
-            @media (min-width: 1025px){
+@media (min-width: 769px){
+
+    .restaurants{
+        margin: 30px 18px;
+        gap: 28px;
+
+        &__link{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+    }
+}
+
+@media (min-width: 1025px){
+
+    .hero__text{
+        gap: 18px;
+
+        h2{
+            width: 100%;
+            font-size: 2.5rem;
+        }
+
+        p{
+            width: 100%;
+        }
+    }
+
+    .fonctionnement{
+        padding: 50px 180px 50px 180px;
+
+        &__container{
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        &__card{
+            width: 100%;
+        }
+    }
+
+    .restaurants{
+        margin: 30px 0;
+        padding: 0 180px 0 180px;
+        gap: 28px;
+
+        &__link{
+            gap: 50px 100px;
+        }
+    }
+
+    .footer{
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        height: 54px;
+        padding: 30px 70px;
+
+        &__link{
+            flex-direction: row;
+        }
+
+        &__link a{
+            .footer__text h3{
+                width: 168px;
+            }
+
+            .footer__text h4{
                 width: 130px;
             }
         }

@@ -300,11 +300,15 @@ a{
     flex-direction: column;
     gap: 16px;
 
+    &__logo a{
+        display: flex;
+        width: fit-content;
+    }
+
     &__logo h2{
         @include primary-font;
         font-size: 1.125rem;
         font-weight: 400;
-        width: fit-content;
     }
 
     &__link{
@@ -318,7 +322,6 @@ a{
         display: flex;
         align-items: center;
         gap: 11px;
-        width: fit-content;
         
         .footer__text h3{
             font-size: 1rem;
@@ -328,6 +331,33 @@ a{
         .footer__text h4{
             font-size: 1rem;
             font-weight: 400;
+        }
+    }
+}
+
+@media (min-width: 769px){
+
+}
+
+@media (min-width: 1025px){
+    .footer{
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        height: 54px;
+        padding: 30px 70px;
+
+        &__link{
+            flex-direction: row;
+        }
+
+        &__link a{
+            .footer__text h3{
+                width: 168px;
+            }
+
+            .footer__text h4{
+                width: 130px;
+            }
         }
     }
 }
