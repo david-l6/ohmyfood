@@ -266,7 +266,6 @@ a{
         display: flex;
         flex-direction: column;
         gap: 25px;
-        }
     }
 
     &__card{
@@ -338,6 +337,11 @@ a{
         height: 251px;
         width: 100%;
         cursor: pointer;
+
+        &:hover{
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba($shadow-color, 0.1);
+        }
 
         .restaurants__text-new p{
             position: absolute;
@@ -446,19 +450,52 @@ a{
 
 @media (min-width: 769px){
 
+    .fonctionnement{
+        padding: 50px;
+    }
+
     .restaurants{
-        margin: 30px 18px;
+        margin: 30px 50px;
         gap: 28px;
 
         &__link{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 50px;
+        }
+    }
+    
+    .footer{
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        height: 54px;
+        padding: 30px 70px;
+
+        &__link{
+            flex-direction: row;
+        }
+
+        &__link a{
+            .footer__text h3{
+                width: 168px;
+            }
+
+            .footer__text h4{
+                width: 130px;
+            }
         }
     }
 }
 
 @media (min-width: 1025px){
+
+    .logo__title{
+        height: 96.34px;
+
+        h1 {
+            font-size: 2.3rem;
+        }
+    }
 
     .hero__text{
         gap: 18px;
@@ -494,27 +531,6 @@ a{
 
         &__link{
             gap: 50px 100px;
-        }
-    }
-
-    .footer{
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        height: 54px;
-        padding: 30px 70px;
-
-        &__link{
-            flex-direction: row;
-        }
-
-        &__link a{
-            .footer__text h3{
-                width: 168px;
-            }
-
-            .footer__text h4{
-                width: 130px;
-            }
         }
     }
 }

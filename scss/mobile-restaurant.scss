@@ -80,6 +80,7 @@ $secondary-font-color: #FFFFFF;
         justify-content: space-between;
         height: 69px;
         overflow: hidden;
+        cursor: pointer;
 
         .menu__name{
             display: flex;
@@ -199,7 +200,8 @@ a{
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         background-color: $secondary-background;
-        transform: translateY(-40px);
+        margin: -50px auto 0 auto;
+        position: relative;
         
         .restaurant__name{
             padding: 32px 17px 0px 17px;
@@ -251,7 +253,7 @@ a{
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
-
+                
                 @include plat
             }
         }
@@ -262,7 +264,7 @@ a{
         }
 
         .restaurant__button button{
-            margin: 40px 0 0 0;
+            margin: 40px 0;
             @include button;
         }
     }
@@ -337,9 +339,19 @@ a{
 
 @media (min-width: 769px){
 
-}
+    .restaurant{
+        background-color: $primary-background;
 
-@media (min-width: 1025px){
+        .restaurant__content{
+            width: 73.26%;
+
+            .restaurant__name{
+                justify-content: center;
+                gap: 24px;
+            }
+        }
+    }
+
     .footer{
         flex-direction: row-reverse;
         align-items: flex-end;
@@ -357,6 +369,32 @@ a{
 
             .footer__text h4{
                 width: 130px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px){
+
+    .logo{
+        height: 96.34px;
+
+        .logo__title h1 {
+            font-size: 2.3rem;
+        }
+    }
+
+    .restaurant{
+
+        .restaurant__image img{
+            height: 383px;
+        }
+
+        .restaurant__content{
+            width: 73.26%;
+    
+            .restaurant__menu{
+                margin: 40px 210px 0 210px;
             }
         }
     }

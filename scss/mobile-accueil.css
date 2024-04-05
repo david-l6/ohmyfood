@@ -151,31 +151,15 @@ a {
   text-align: center;
   gap: 8px;
 }
-@media (min-width: 1025px) {
-  .hero__text {
-    gap: 18px;
-  }
-}
 .hero__text h2 {
   width: 73.33%;
   font-size: 1.5rem;
   font-weight: 700;
 }
-@media (min-width: 1025px) {
-  .hero__text h2 {
-    width: 100%;
-    font-size: 2.5rem;
-  }
-}
 .hero__text p {
   width: 84%;
   font-size: 1.125rem;
   font-weight: 300;
-}
-@media (min-width: 1025px) {
-  .hero__text p {
-    width: 100%;
-  }
 }
 .hero__button button {
   margin: 27px 0;
@@ -203,11 +187,6 @@ a {
   flex-direction: column;
   gap: 25px;
 }
-@media (min-width: 1025px) {
-  .fonctionnement {
-    padding: 50px 180px 50px 180px;
-  }
-}
 .fonctionnement__title h2 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -217,21 +196,9 @@ a {
   flex-direction: column;
   gap: 25px;
 }
-@media (min-width: 1025px) {
-  .fonctionnement__container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 24px;
-  }
-}
 .fonctionnement__card {
   display: flex;
   align-items: center;
-}
-@media (min-width: 1025px) {
-  .fonctionnement__card {
-    width: 100%;
-  }
 }
 .fonctionnement__card:hover .fa-solid {
   color: #9356DC;
@@ -276,19 +243,6 @@ a {
   flex-direction: column;
   gap: 18px;
 }
-@media (min-width: 769px) {
-  .restaurants {
-    margin: 30px 18px;
-    gap: 28px;
-  }
-}
-@media (min-width: 1025px) {
-  .restaurants {
-    margin: 30px 0;
-    padding: 0 180px 0 180px;
-    gap: 28px;
-  }
-}
 .restaurants__title h2 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -298,23 +252,15 @@ a {
   flex-direction: column;
   gap: 18px;
 }
-@media (min-width: 769px) {
-  .restaurants__link {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-@media (min-width: 1025px) {
-  .restaurants__link {
-    gap: 50px 100px;
-  }
-}
 .restaurants__card {
   position: relative;
   height: 251px;
   width: 100%;
   cursor: pointer;
+}
+.restaurants__card:hover {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 .restaurants__card .restaurants__text-new p {
   position: absolute;
@@ -403,14 +349,6 @@ a {
   gap: 16px;
   height: 142px;
 }
-@media (min-width: 1025px) {
-  .footer {
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    height: 54px;
-    padding: 30px 70px;
-  }
-}
 .footer__logo a {
   display: flex;
   width: -moz-fit-content;
@@ -428,11 +366,6 @@ a {
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (min-width: 1025px) {
-  .footer__link {
-    flex-direction: row;
-  }
-}
 .footer__link a {
   display: flex;
   align-items: center;
@@ -442,17 +375,74 @@ a {
   font-size: 1rem;
   font-weight: 500;
 }
-@media (min-width: 1025px) {
-  .footer__link a .footer__text h3 {
-    width: 168px;
-  }
-}
 .footer__link a .footer__text h4 {
   font-size: 1rem;
   font-weight: 400;
 }
-@media (min-width: 1025px) {
+
+@media (min-width: 769px) {
+  .fonctionnement {
+    padding: 50px;
+  }
+  .restaurants {
+    margin: 30px 50px;
+    gap: 28px;
+  }
+  .restaurants__link {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+  .footer {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    height: 54px;
+    padding: 30px 70px;
+  }
+  .footer__link {
+    flex-direction: row;
+  }
+  .footer__link a .footer__text h3 {
+    width: 168px;
+  }
   .footer__link a .footer__text h4 {
     width: 130px;
+  }
+}
+@media (min-width: 1025px) {
+  .logo__title {
+    height: 96.34px;
+  }
+  .logo__title h1 {
+    font-size: 2.3rem;
+  }
+  .hero__text {
+    gap: 18px;
+  }
+  .hero__text h2 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .hero__text p {
+    width: 100%;
+  }
+  .fonctionnement {
+    padding: 50px 180px 50px 180px;
+  }
+  .fonctionnement__container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .fonctionnement__card {
+    width: 100%;
+  }
+  .restaurants {
+    margin: 30px 0;
+    padding: 0 180px 0 180px;
+    gap: 28px;
+  }
+  .restaurants__link {
+    gap: 50px 100px;
   }
 }/*# sourceMappingURL=mobile-accueil.css.map */
